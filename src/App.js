@@ -10,9 +10,8 @@ function App() {
     { name: 'Noir uni ', price: 1000 }
   ];
 
-  // const [valueCar, setValueCar] = useState(cars[0].price);
-  // const [valueColor, setValueColor] = useState(colors[0].price);
-  const [counter, setCounter] = useState(valueCar + valueColor);
+  const [valueCar, setValueCar] = useState(cars[0].price);
+  const [valueColor, setValueColor] = useState(colors[0].price);
 
   return (
     <>
@@ -25,8 +24,7 @@ function App() {
               key={index}
               className='button'
               onClick={() => {
-                // setValueCar(car.price);
-                setCounter(valueColor + valueCar);
+                setValueCar(car.price);
               }}
             >
               {car.name} - {car.price} €
@@ -40,8 +38,7 @@ function App() {
               key={index}
               className='button'
               onClick={() => {
-                // setValueColor(color.price);
-                setCounter(valueCar + valueColor);
+                setValueColor(color.price);
               }}
             >
               {color.name} - {color.price}
@@ -49,7 +46,7 @@ function App() {
           );
         })}
         <div className='buy'>
-          <p>{counter}</p>
+          <p>{valueColor + valueCar}</p>
           <button>Buy</button>
         </div>
       </div>
